@@ -11,8 +11,14 @@ p {
     display: inline-block;
 }
 
+.button-limpo{
+    background-color:transparent;
+    border: none;
+    cursor: pointer;
+}
+
 .div-cabecalho{
-    height: 90px;
+    height: 100px;
     width: 100%;
     background-color: rgb(27, 27, 65);
     box-sizing: content-box;
@@ -32,10 +38,15 @@ p {
 }
 .p-nome{
     font-weight: bold;
-    font-size: 1.8em;
+    font-size: 24pt;
     margin-left: 10px;
 }
 
+.linha-logo{
+    height: 3px;
+    width: 300px;
+    background-color: turquoise;
+}
 .p-nome-card{
     margin-top: 28px;
     font-weight: bold;
@@ -47,16 +58,14 @@ p {
     font-size: 1.4em;
 }
 
-.p-formacao{
-    font-size: 1.5em;
-    margin-left: 60px;
+.div-formacao-logo{
+    text-align: end;
 }
 
-.linha-logo{
-    height: 3px;
-    width: 300px;
-    background-color: turquoise;
+.p-formacao{
+    font-size: 18pt;
 }
+
 
 .linha-logo-card{
     margin-left: 26px;
@@ -77,9 +86,18 @@ p {
     
     float: right;
     display: inline-end;
+    
+}
+
+.nav-menu-gg{
     margin-right: 40px;
     margin-top: 40px;
 }
+
+.nav-dropbutton{
+    display: none;
+}
+
 
 .nav-menu lu{
     
@@ -102,12 +120,121 @@ p {
     color: blueviolet;
 }
 
+.aling-down{
+    display: none;
+}
 
-@media (max-width: 1010px) {
-    .nav-menu{
+
+
+@media (max-width: 1010px) and (min-width: 535px) {
+    .nav-menu-gg{
         display: none;
     }
+
+    .div-cabecalho{
+       
+    }
+
+    .nav-dropbutton{
+        display: block;
+        margin-top: 15px;
+        margin-right: 15px;
+    }
+
+    .nav-dropbutton a:hover{
+        cursor: pointer;
+    }
+
+    .aling-down{
+        display: none;
+        position: absolute;
+        margin-top: 100px;
+        height: 100px;
+        width: 100%;
+        background-color: rgba(128, 128, 128, 0.185);
+        align-items: center;
+    }
+
+    .show {
+        display: block;
+    }
+
+    
+
+    .div-menu-p div{
+        text-align: center;
+        display: inline-block;
+        margin-top: 24px;
+        padding: 12px;
+    }
+
+    
+
+    .div-menu-p-ec{
+        position: absolute;
+        left: 8px;
+        text-decoration: none;
+        font-size: 12pt;
+        font-weight: bold;
+        color: white;
+    }
+
+    .div-menu-p-ec:hover{
+        font-size: 12.5pt;
+        text-shadow:  2px 2px 4px purple;
+    }
+
+    .div-menu-p-port{
+        position: absolute;
+        left: 240px;
+        text-decoration: none;
+        font-size: 12pt;
+        font-weight: bold;
+        color: white;
+    }
+
+    .div-menu-p-port:hover{
+        font-size: 12.5pt;
+        text-shadow:  2px 2px 4px purple;
+    }
+
+    .div-menu-p-sm{
+        position: absolute;
+        left: 330px;
+        text-decoration: none;
+        font-size: 12pt;
+        font-weight: bold;
+        color: white;
+    }
+
+    .div-menu-p-sm:hover{
+        font-size: 12.5pt;
+        text-shadow:  2px 2px 4px purple;
+    }
+
+    .div-menu-p-cont{
+        position: absolute;
+        right: 7px;
+        text-decoration: none;
+        
+    
+        font-size: 12pt;
+        font-weight: bold;
+        color: rgb(255, 0, 0);
+    }
+
+    .div-menu-p-cont:hover{
+        
+        font-size: 12.5pt;
+        text-shadow:  0px 0px 1px rgba(255, 255, 255, 0.664);
+    }
+
+    .altura{
+        height: 200px;
+    }
 }
+
+
 
 
 .div-conteudo{
@@ -190,4 +317,179 @@ p {
 .p-footer{
     margin-top: 5px;
     color: white;
+}
+
+@media(max-width: 535px){
+
+    .nav-menu-gg{
+        display: none;
+    }
+
+    .div-menu-p{
+        display: block;
+        text-align: center;
+    }
+
+    .div-menu-p div{
+
+        display: block;
+        height: 18px;
+        margin-top: 5px;
+        text-align: center;
+    }
+    
+
+    .aling-down{
+        display: none;
+        position: absolute;
+        margin-top: 100px;
+        height: 100px;
+        width: 100%;
+        background-color: rgba(128, 128, 128, 0.185);
+        align-items: center;
+    }
+
+    .show {
+        display: block;
+    }
+
+    .card-principal{
+        position: absolute;
+        margin-top: 10px;
+        height: 400px;
+        width: 266px;
+        left: calc(50% - 133px);
+        overflow: hidden;
+        text-align: center;
+        z-index: 99;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.774)
+    }
+
+    .nav-dropbutton{
+        display: block;
+        margin-top: 32px;
+        margin-right: 15px;
+    }
+
+    .nav-dropbutton a:hover{
+        cursor: pointer;
+    }
+
+    
+
+    
+
+    .div-menu-p-ec{
+        position: relative;
+        text-decoration: none;
+        font-size: 12pt;
+        font-weight: bold;
+        color: white;
+    }
+
+    .div-menu-p-ec:hover{
+        font-size: 12.5pt;
+        text-shadow:  2px 2px 4px purple;
+    }
+
+    .div-menu-p-port{
+        position: relative;
+        text-decoration: none;
+        font-size: 12pt;
+        font-weight: bold;
+        color: white;
+    }
+
+    .div-menu-p-port:hover{
+        font-size: 12.5pt;
+        text-shadow:  2px 2px 4px purple;
+    }
+
+    .div-menu-p-sm{
+        position: relative;
+        text-decoration: none;
+        font-size: 12pt;
+        font-weight: bold;
+        color: white;
+    }
+
+    .div-menu-p-sm:hover{
+        font-size: 12.5pt;
+        text-shadow:  2px 2px 4px purple;
+    }
+
+    .div-menu-p-cont{
+        position: relative;
+        text-decoration: none;
+        
+    
+        font-size: 12pt;
+        font-weight: bold;
+        color: rgb(255, 0, 0);
+    }
+
+    .div-menu-p-cont:hover{
+        
+        font-size: 12.5pt;
+        text-shadow:  0px 0px 1px rgba(255, 255, 255, 0.664);
+    }
+
+
+    .decorator-contato{
+        text-align: center;
+        position: absolute;
+        height: 19px;
+        width: 90px;
+        border: solid 2px purple;
+        border-radius: 10px;
+    }
+
+    .altura{
+        height: 200px;
+    }
+
+
+    .div-foto-principal{
+        position: relative;
+        height: 226px;
+        width: 300px;
+        margin-top: 10px;
+        margin-left: 50px;
+        overflow: hidden;
+        background-color: rgba(0, 0, 255, 0);
+    }
+    
+    .img-foto-principal{
+        position: relative;
+        height: 226px;
+        width:  150px;
+        border-radius: 7px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
+    }
+
+    .p-nome-card{
+        margin-top: 3px;
+    }
+
+    .linha-logo-card{
+        margin: 0px;
+        margin-top: 10px;
+        margin-left: 5px;
+        width: 255px;
+    }
+
+    .p-profissao-card{
+        margin-top: 10px;
+    }
+
+    .icons{
+        margin-left: 3px;
+        height: 30px;
+    }
+
+
+    
+    
+    
 }

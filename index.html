@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +8,29 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/style.css">
 
-    
+
     <title>Mailon de Campos</title>
 
-    
-    
+
+
 </head>
-    <body>
-        <header>
-            <div class="div-cabecalho">
 
-                <nav class="nav-logo">
-                    <a href="#Inicio">
-                        <p class="p-nome">Mailon de Campos</p>
-                        <div class="linha-logo"></div>
+<body>
+    <header>
+        <div class="div-cabecalho" id="id-cabecalho">
+
+            <nav class="nav-logo">
+                <a href="http://www.mailondecampos.com">
+                    <p class="p-nome">Mailon de Campos</p>
+                    <div class="linha-logo"></div>
+                    <div class="div-formacao-logo">
                         <p class="p-formacao">Computer engineering</p>
-                    </a>
-                </nav>
+                    </div>
+                </a>
+            </nav>
 
-                <nav class="nav-menu">
+            <nav class="nav-menu">
+                <nav class="nav-menu-gg">
                     <lu>
                         <li>
                             <a href="#Engenharia-da-computacao">Engenharia da Computação</a>
@@ -39,49 +44,83 @@
                         <li>
                             <a href="#Contato">Contato</a>
                         </li>
-                        
-    
                     </lu>
-                </nav>        
-                
+                </nav>
+
+                <nav class="nav-dropbutton">
+                    <button class="button-dropbutton button-limpo" onclick="menuDrop()"><img src="/icons/menu.png"></button>
+                </nav>
+            </nav>
+            <div class="aling-down" id=div-dropdown>
+                <div class="div-menu-p">
+                    <div><a href="#eng-comp" class="div-menu-p-ec">Engenharia da Computação</a></div>
+                    <div><a href="#portfolio" class="div-menu-p-port">Portfólio</a></div>
+                    <div><a href="" class="div-menu-p-sm">Saiba Mais</a></div>
+                    <div><a href="" class="div-menu-p-cont">Contato</a></div>
                 </div>
-           <!-- <h1>Em Construção</h1> -->
-        </header>
-
-        <div class="div-conteudo">
-            <div class="div-base">
-                <div class="card-principal">
-                    <div class="div-foto-principal">
-                        <img class="img-foto-principal"src="/imagens/foto-perfil.jpg">
-                    </div>
-                    <div>
-                        <p class="p-nome-card">Mailon de Campos</p>
-                    </div>
-                    <div class="linha-logo-card"></div>
-                    <div>
-                        <p class="p-profissao-card">Computer Engineering</p>
-                    </div>
-                    <div class="rede-sociais-card">
-                        <a href="https://www.instagram.com/mailon.bruno/"><img class="icons" src="/icons/instagram.png"></a>
-                        <a href="https://www.linkedin.com/in/mailon-bruno-379527216/"><img class="icons" src="/icons/linkedin.png"></a>
-                        <a href="https://twitter.com/Mailon_Bruno"><img class="icons" src="/icons/twitter.png"></a>
-                        <a href="https://www.facebook.com/mailon.brunopedridecampos"><img class="icons" src="/icons/facebook.png"></a>
-                        
-                    </div>
-                </div>
-                
-                <div class="div-esquerda"></div>
-                <div class="div-direita"></div>
-
-
             </div>
+
         </div>
-        
-        <footer>
-            <div class="div-footer">
-                <p class="p-footer">@mailondecampos</p>
-            </div>
-        </footer>
+    </header>
 
-    </body>
+    <div class="div-conteudo">
+        <div class="div-base">
+            <div class="card-principal">
+                <div class="div-foto-principal">
+                    <img class="img-foto-principal" src="/imagens/foto-perfil.jpg">
+                </div>
+                <div>
+                    <p class="p-nome-card">Mailon de Campos</p>
+                </div>
+                <div class="linha-logo-card"></div>
+                <div>
+                    <p class="p-profissao-card">Computer Engineering</p>
+                </div>
+                <div class="rede-sociais-card">
+                    <a href="https://www.instagram.com/mailon.bruno/"><img class="icons" src="/icons/instagram.png"></a>
+                    <a href="https://www.linkedin.com/in/mailon-bruno-379527216/"><img class="icons"
+                            src="/icons/linkedin.png"></a>
+                    <a href="https://twitter.com/Mailon_Bruno"><img class="icons" src="/icons/twitter.png"></a>
+                    <a href="https://www.facebook.com/mailon.brunopedridecampos"><img class="icons"
+                            src="/icons/facebook.png"></a>
+                    <a href="https://github.com/MailonBruno21"><img class="icons" src="/icons/github.png"></a>
+
+                </div>
+            </div>
+
+            <div class="div-esquerda"></div>
+            <div class="div-direita"></div>
+
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="div-footer">
+            <p class="p-footer">@mailondecampos</p>
+        </div>
+    </footer>
+
+    <script>
+        function menuDrop() {
+            document.getElementById("div-dropdown").classList.toggle("show")
+            document.getElementById("id-cabecalho").classList.toggle("altura")
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('.button-dropbutton')) {
+                var dropdowns = document.getElementsByClassName("div-menu-p");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+
 </html>
