@@ -1,5 +1,6 @@
 *{
     margin: 0px;
+    text-decoration: none;
 }
 
 body {
@@ -124,6 +125,73 @@ p {
     display: none;
 }
 
+/*CSS Responsavel por estilizar o texto de aprersentação*/
+
+.div-text-apresentacao{
+    position: fixed;
+    margin-top: 100px;
+    text-align: left;
+    width: calc(35% + 140px);
+    left: calc(30% + 200px);
+    z-index: 99;
+    text-shadow: 3px 3px 6px rgb(165, 159, 159);
+}
+
+.text-boasvindas{
+    width: 100%;
+    font-size: 2.2em;
+    font-weight: bold;
+
+}
+
+.text-apresentacao{
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+.text-apresentacao::after{
+    content: '|';
+    opacity: 0;
+    margin-left: 5px;
+    display: inline-block;
+    
+    
+    animation-delay: 1s;
+    animation-duration: 0.6s;
+    animation-iteration-count: 19;
+    animation-name: blinkDelay;
+    
+} 
+
+@keyframes blinkDelay {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    
+  }
+.text-boasvindas::after{
+    
+    content: '|';
+    opacity: 0;
+    margin-left: 5px;
+    display: inline-block;
+    animation: blink .26s 3;
+}
+
+@keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+
+  }
+
 
 
 @media (max-width: 1010px) and (min-width: 535px) {
@@ -137,7 +205,7 @@ p {
 
     .nav-dropbutton{
         display: block;
-        margin-top: 15px;
+        margin-top: 40px;
         margin-right: 15px;
     }
 
@@ -368,7 +436,7 @@ p {
 
     .nav-dropbutton{
         display: block;
-        margin-top: 32px;
+        margin-top: 40px;
         margin-right: 15px;
     }
 

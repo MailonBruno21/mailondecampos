@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/style.css">
+    
 
 
     <title>Mailon de Campos</title>
@@ -62,9 +62,12 @@
 
         </div>
     </header>
-
+    
     <div class="div-conteudo">
         <div class="div-base">
+            <div class="div-esquerda"></div>
+            <div class="div-direita"></div>
+            
             <div class="card-principal">
                 <div class="div-foto-principal">
                     <img class="img-foto-principal" src="/imagens/foto-perfil.jpg">
@@ -76,21 +79,24 @@
                 <div>
                     <p class="p-profissao-card">Computer Engineering</p>
                 </div>
-                <div class="rede-sociais-card">
-                    <a href="https://www.instagram.com/mailon.bruno/"><img class="icons" src="/icons/instagram.png"></a>
-                    <a href="https://www.linkedin.com/in/mailon-bruno-379527216/"><img class="icons"
-                            src="/icons/linkedin.png"></a>
-                    <a href="https://twitter.com/Mailon_Bruno"><img class="icons" src="/icons/twitter.png"></a>
-                    <a href="https://www.facebook.com/mailon.brunopedridecampos"><img class="icons"
-                            src="/icons/facebook.png"></a>
-                    <a href="https://github.com/MailonBruno21"><img class="icons" src="/icons/github.png"></a>
-
-                </div>
+                        <div class="rede-sociais-card">
+                            <a href="https://www.instagram.com/mailon.bruno/"><img class="icons" src="/icons/instagram.png"></a>
+                            <a href="https://www.linkedin.com/in/mailon-bruno-379527216/"><img class="icons"
+                                src="/icons/linkedin.png"></a>
+                            <a href="https://twitter.com/Mailon_Bruno"><img class="icons" src="/icons/twitter.png"></a>
+                            <a href="https://www.facebook.com/mailon.brunopedridecampos"><img class="icons"
+                                src="/icons/facebook.png"></a>
+                            <a href="https://github.com/MailonBruno21"><img class="icons" src="/icons/github.png"></a>
+                            
+                        </div> 
             </div>
 
-            <div class="div-esquerda"></div>
-            <div class="div-direita"></div>
-
+            <div class="div-text-apresentacao">
+                <p class="text-boasvindas" id="animacao-boasvindas">Ola, tudo bem?</p>
+                <p class="text-apresentacao" id="animacao-apresentacao">
+                    Eu sou Mailon Bruno, estudante de Engenharia da Computação cursando o 9º semestre no Instituto Federal de Mato Grosso, IFMT Campus Cuiabá. Estudo tecnologias relacionadas ao Desenvolvimento Web como: Javascript, HTML, CSS e frameworks como React e Vue.js.
+                </p>
+            </div>
 
         </div>
     </div>
@@ -101,25 +107,9 @@
         </div>
     </footer>
 
-    <script>
-        function menuDrop() {
-            document.getElementById("div-dropdown").classList.toggle("show")
-            document.getElementById("id-cabecalho").classList.toggle("altura")
-        }
+    <script src="/script/script.js"></script>
 
-        window.onclick = function (event) {
-            if (!event.target.matches('.button-dropbutton')) {
-                var dropdowns = document.getElementsByClassName("div-menu-p");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
+    
 
 </body>
 
