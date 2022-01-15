@@ -1,563 +1,348 @@
 *{
-    margin: 0px;
-    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    display: block;
-}
-
-p {
-    display: inline-block;
-}
-
-.button-limpo{
-    background-color:transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.div-cabecalho{
-    height: 100px;
-    width: 100%;
-    background-color: rgb(27, 27, 65);
-    box-sizing: content-box;
-}
-
-.nav-logo{
-    
-    position: absolute;
-    margin-top: 15px;
-    width: 300px;
-    display: inline-block;
-}
-
-.nav-logo a{
-    color: white;
-    text-decoration: none;
-}
-.p-nome{
-    font-weight: bold;
-    font-size: 24pt;
-    margin-left: 10px;
-}
-
-.linha-logo{
-    height: 3px;
-    width: 300px;
-    background-color: turquoise;
-}
-.p-nome-card{
-    margin-top: 28px;
-    font-weight: bold;
-    font-size: 1.8em;
-}
-
-.p-profissao-card{
-    margin-top: 20px;
-    font-size: 1.4em;
-}
-
-.div-formacao-logo{
-    text-align: end;
-}
-
-.p-formacao{
-    font-size: 18pt;
-}
+ul{list-style: none;}
+a{text-decoration: none;}
+img{max-width: 100%;}
 
 
-.linha-logo-card{
-    margin-left: 26px;
-    margin-top: 10px;
-    height: 3px;
-    width: 300px;
-    background-color: turquoise;
-}
-
-.rede-sociais-card{
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    bottom: 0%;
-}
-
-.nav-menu{
-    
-    float: right;
-    display: inline-end;
+@media screen and (max-width: 480px) {
     
 }
 
-.nav-menu-gg{
-    margin-right: 40px;
-    margin-top: 40px;
-}
 
-.nav-dropbutton{
-    display: none;
-}
-
-
-.nav-menu lu{
+@media screen and (max-width: 720px) {
     
-    margin: 0px;
-    padding: 0px;
 }
 
-.nav-menu li{
-    display: inline;
-}
 
-.nav-menu a{
-    padding-left: 70px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
-
-.nav-menu a:hover{
-    color: blueviolet;
-}
-
-.aling-down{
-    display: none;
-}
-
-/*CSS Responsavel por estilizar o texto de aprersentação*/
-
-.div-text-apresentacao{
-    position: fixed;
-    margin-top: 100px;
-    text-align: left;
-    width: calc(35% + 140px);
-    left: calc(30% + 200px);
-    z-index: 99;
-    text-shadow: 3px 3px 6px rgb(165, 159, 159);
-}
-
-.text-boasvindas{
-    width: 100%;
-    font-size: 2.2em;
-    font-weight: bold;
-
-}
-
-.text-apresentacao{
-    margin-top: 20px;
-    font-weight: 500;
-    font-size: 1.5em;
-}
-
-.text-apresentacao::after{
-    content: '|';
-    opacity: 0;
-    margin-left: 5px;
-    display: inline-block;
-    
-    
-    animation-delay: 1s;
-    animation-duration: 0.6s;
-    animation-iteration-count: 19;
-    animation-name: blinkDelay;
-    
-} 
-
-@keyframes blinkDelay {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-    
-  }
-.text-boasvindas::after{
-    
-    content: '|';
-    opacity: 0;
-    margin-left: 5px;
-    display: inline-block;
-    animation: blink .26s 3;
-}
-
-@keyframes blink {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
+@media screen and (max-width: 1920px) {
+    .container{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+                "header"
+                "main"
+                "footer"
+        ;
     }
 
-  }
-
-
-
-@media (max-width: 1010px) and (min-width: 535px) {
-    .nav-menu-gg{
-        display: none;
-    }
-
-    .div-cabecalho{
-       
-    }
-
-    .nav-dropbutton{
-        display: block;
-        margin-top: 40px;
-        margin-right: 15px;
-    }
-
-    .nav-dropbutton a:hover{
-        cursor: pointer;
-    }
-
-    .aling-down{
-        display: none;
-        position: absolute;
-        margin-top: 100px;
+    /*Estilo aplicado ao cabecalho*/
+    header{
+        grid-area: header;
+        display: grid;  
+        grid-template-columns: 30% 70%;
+        grid-template-areas:
+                "logo navegacao"
+        ;
         height: 100px;
-        width: 100%;
-        background-color: rgba(128, 128, 128, 0.185);
-        align-items: center;
+        background-color: rgb(4, 0, 65);
     }
 
-    .show {
-        display: block;
+    .logo{
+        grid-area: logo;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+                "navegacao-logo-header"
+        ;
+        cursor: default;
     }
-
-    
-
-    .div-menu-p div{
-        text-align: center;
-        display: inline-block;
-        margin-top: 24px;
-        padding: 12px;
-    }
-
-    
-
-    .div-menu-p-ec{
-        position: absolute;
-        left: 8px;
-        text-decoration: none;
-        font-size: 12pt;
-        font-weight: bold;
+    /*Criando a logo */
+    .navegacao-logo-header{
+        grid-area: navegacao-logo-header;
+        display: grid;
+        grid-template-columns: 300px;
+        grid-template-areas: 
+                "nome-logo-header"
+                "divisao-logo-header"
+                "formacao-logo-header"
+        ;
+        justify-content: start;
+        padding-left: 10px;
         color: white;
     }
 
-    .div-menu-p-ec:hover{
-        font-size: 12.5pt;
-        text-shadow:  2px 2px 4px purple;
-    }
-
-    .div-menu-p-port{
-        position: absolute;
-        left: 240px;
-        text-decoration: none;
-        font-size: 12pt;
-        font-weight: bold;
+    .navegacao-logo-header > a{
         color: white;
     }
 
-    .div-menu-p-port:hover{
-        font-size: 12.5pt;
-        text-shadow:  2px 2px 4px purple;
-    }
-
-    .div-menu-p-sm{
-        position: absolute;
-        left: 330px;
-        text-decoration: none;
-        font-size: 12pt;
-        font-weight: bold;
-        color: white;
-    }
-
-    .div-menu-p-sm:hover{
-        font-size: 12.5pt;
-        text-shadow:  2px 2px 4px purple;
-    }
-
-    .div-menu-p-cont{
-        position: absolute;
-        right: 7px;
-        text-decoration: none;
-        
     
-        font-size: 12pt;
-        font-weight: bold;
-        color: rgb(255, 0, 0);
-    }
-
-    .div-menu-p-cont:hover{
-        
-        font-size: 12.5pt;
-        text-shadow:  0px 0px 1px rgba(255, 255, 255, 0.664);
-    }
-
-    .altura{
-        height: 200px;
-    }
-}
-
-
-
-
-.div-conteudo{
-    margin: 0px;
-    background-color: #0dffff00;
-    height: calc(100vh - 130px);
-    width: 100%;
-}
-
-
-
-
-.div-base{
-    margin: 0px;
-    display: inline-flex;
-    height: 100%;
-    width: 100%;
-    background-color: white;
-}
-
-.card-principal{
-    position: absolute;
-    margin-top: 20px;
-    height: 550px;
-    width: 350px;
-    left: calc(30% - 175px);
-    text-align: center;
-    z-index: 99;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.774)
-}
-
-.div-foto-principal{
-    position: relative;
-    left: calc(19% - 115px);
-    height: 300px;
-    width: 230px;
-    margin-top: 20px;
-    
-    background-color: none;
-}
-
-.img-foto-principal{
-    position: absolute;
-    height: 300px;
-    width: 230px;
-    border-radius: 7px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
-}
-
-.icons{
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 5px;
-}
-
-
-.div-direita{
-    height:100%;
-    width: 70vw;
-    background-color: rgb(0, 195, 255);
-}
-
-.div-esquerda{
-    height: 100%;
-    width: 30vw;
-    background-color: rgba(31, 244, 252, 0.712);
-}
-
-
-.div-footer{
-    margin: 0px;
-    text-align:center;
-    background-color: #2d2d63;
-    height: 40px;
-    width: 100%;
-
-}
-
-.p-footer{
-    margin-top: 5px;
-    color: white;
-}
-
-@media(max-width: 535px){
-
-    .nav-menu-gg{
-        display: none;
-    }
-
-    .div-menu-p{
-        display: block;
-        text-align: center;
-    }
-
-    .div-menu-p div{
-
-        display: block;
-        height: 18px;
-        margin-top: 5px;
-        text-align: center;
-    }
-    
-
-    .aling-down{
-        display: none;
-        position: absolute;
-        margin-top: 100px;
-        height: 100px;
-        width: 100%;
-        background-color: rgba(128, 128, 128, 0.185);
-        align-items: center;
-    }
-
-    .show {
-        display: block;
-    }
-
-    .card-principal{
-        position: absolute;
-        margin-top: 10px;
-        height: 400px;
-        width: 266px;
-        left: calc(50% - 133px);
-        overflow: hidden;
-        text-align: center;
-        z-index: 99;
-        background-color: white;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.774)
-    }
-
-    .nav-dropbutton{
-        display: block;
-        margin-top: 40px;
-        margin-right: 15px;
-    }
-
-    .nav-dropbutton a:hover{
-        cursor: pointer;
-    }
-
-    
-
-    
-
-    .div-menu-p-ec{
-        position: relative;
-        text-decoration: none;
-        font-size: 12pt;
-        font-weight: bold;
-        color: white;
-    }
-
-    .div-menu-p-ec:hover{
-        font-size: 12.5pt;
-        text-shadow:  2px 2px 4px purple;
-    }
-
-    .div-menu-p-port{
-        position: relative;
-        text-decoration: none;
-        font-size: 12pt;
-        font-weight: bold;
-        color: white;
-    }
-
-    .div-menu-p-port:hover{
-        font-size: 12.5pt;
-        text-shadow:  2px 2px 4px purple;
-    }
-
-    .div-menu-p-sm{
-        position: relative;
-        text-decoration: none;
-        font-size: 12pt;
-        font-weight: bold;
-        color: white;
-    }
-
-    .div-menu-p-sm:hover{
-        font-size: 12.5pt;
-        text-shadow:  2px 2px 4px purple;
-    }
-
-    .div-menu-p-cont{
-        position: relative;
-        text-decoration: none;
-        
-    
-        font-size: 12pt;
-        font-weight: bold;
-        color: rgb(255, 0, 0);
-    }
-
-    .div-menu-p-cont:hover{
-        
-        font-size: 12.5pt;
-        text-shadow:  0px 0px 1px rgba(255, 255, 255, 0.664);
-    }
-
-
-    .decorator-contato{
-        text-align: center;
-        position: absolute;
-        height: 19px;
-        width: 90px;
-        border: solid 2px purple;
-        border-radius: 10px;
-    }
-
-    .altura{
-        height: 200px;
-    }
-
-
-    .div-foto-principal{
-        position: relative;
-        height: 226px;
+    .nome-logo-header{
+        grid-area: nome-logo-header;
+        font-size: 22pt;
+        font-weight: 600;
         width: 300px;
-        margin-top: 10px;
-        margin-left: 50px;
+        display: grid;
+        margin-top: 15px;
+        align-self: end;
+    }
+
+    .divisao-logo-header{
+        grid-area: divisao-logo-header;
+        height: 5px;
+        width: 300px;
+        background-color: turquoise;
+        
+    }
+
+    .formacao-logo-header{
+        grid-area: formacao-logo-header;
+        font-size: 19pt;
+        font-weight: 400;
+        width: 251px;
+        display: grid;
+        margin-left: 17%;
+        margin-bottom: 15px;
+    }
+    /*FIM DO LOGO*/
+
+
+    /*Estilo para NAV-BAR*/
+    .navegacao{
+        grid-area: navegacao;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+                "navbar-header"
+        ;
+        color: white;
+        
+    }
+
+    .navbar-header{
+        grid-area: navbar-header;
+        display: grid;
+        justify-content: end;
+        align-items: center;
+    }
+
+    .navbar-header li{
+        display: inline-block;
+        margin-right: 25px;
+        padding: 25px;
+        font-size: 20px;
+        font-family: monospace;
+        font-weight: 550;
+    }
+
+    .navbar-header li:hover{
+        cursor: pointer;
+        background-color: rgb(9, 0, 87);
+        box-shadow: 0px 0px 10px 1px rgb(1, 224, 240);
+    }
+
+    /*FIM MENU DE NAVEGACAO*/
+
+    /*Estilo do conteudo da pagina principal*/
+
+    main{
+        grid-area: main;
+        height: calc(100vh - 190px);
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-areas: 
+                "bg1 bg2"
+        ;
         overflow: hidden;
-        background-color: rgba(0, 0, 255, 0);
+    }
+
+    .bg1-main{
+        grid-area: bg1;
+        background-color: rgb(104, 237, 255);
+    }
+
+    .bg2-main{
+        background-color: rgb(3, 5, 102);
+        grid-area: bg2;
+        
+    }
+
+    /*Estilo aplicado ao card principal da pagina home*/
+
+    .container-flutuante-main{
+        position: absolute;
+        width: 100vw;
+        height: calc(100vh - 190px);
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-areas: 
+                "card-flutuante-main texto-apresentacao"
+                "card-flutuante-main card-tecnologias-main"
+        ;
+    }
+
+    .card-tecnologias-main{
+        grid-area: card-tecnologias-main;
+        display: grid;
+        align-self: end;
+        justify-self: end;
+
+    }
+
+    .icons-tecnologias{
+        display: inline;
+        overflow: hidden;
+        margin-right: 70px;
+        
+    }
+
+    .icons-tecnologias a{
+        cursor: default;
+    }
+
+    .icons-tecnologias img{
+        cursor: pointer;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .img-icons-tecnologias img:hover{
+        margin-bottom: 70px;
+        
     }
     
-    .img-foto-principal{
-        position: relative;
-        height: 226px;
-        width:  150px;
-        border-radius: 7px;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
+
+    .card-flutuante-main{
+        /* position: absolute; */
+        height: 500px;
+        width: 350px;
+        margin-left: 12vw;
+        margin-top: 50px;
+        background-color: white;
+        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.63);
+        display: grid;
+        align-content: start;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+                "foto-card-main"
+                "logo-card-main"
+            "midias-sociais-card-main"
+        ;
     }
 
-    .p-nome-card{
-        margin-top: 3px;
+    .foto-card-main{
+        grid-area: foto-card-main;
+        height: 320px;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas:
+                "img-card-main";
+        align-items: center;
     }
 
-    .linha-logo-card{
-        margin: 0px;
-        margin-top: 10px;
-        margin-left: 5px;
-        width: 255px;
+    .img-card-main{
+        grid-area: img-card-main;
+        justify-self: center;
+        height: 300px;
+        width: 250px;
     }
 
-    .p-profissao-card{
-        margin-top: 10px;
+    .img-card-main img{
+        box-shadow: 0px 0px 0px 3px rgb(0, 0, 0);
     }
 
-    .icons{
-        margin-left: 3px;
-        height: 30px;
+    .logo-card-main{
+        grid-area: logo-card-main;
+        height: 90px;
+        background-color: rgb(255, 255, 255);
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+                "nome-logo-card-main"
+                "linha-logo-card-main"
+                "formacao-logo-card-main"
+        ;
+        align-items: start;
+    }
+
+    .nome-logo-card-main{
+        grid-area: nome-logo-card-main;
+        font-size: 24pt;
+        font-weight: 600;
+        height: 25px;
+        width: 300px;
+        display: grid;
+        align-self: start;
+        margin-left: 10px;
+        margin-top: 0px;
+    }
+
+    .linha-logo-card-main{
+        grid-area: linha-logo-card-main;
+        justify-self: center;
+        align-self: start;
+        height: 5px;
+        width: 340px;
+        background-color: turquoise;
+    }
+
+    .formacao-logo-card-main{
+        font-size: 20pt;
+        font-weight: 400;
+        margin-right: 5px;
+        display: grid;
+        justify-self: end;
+        margin-top: -10px;
+    }
+    .midias-sociais-card-main{
+        grid-area: midias-sociais-card-main;
+        display: grid;
+        height: 85px;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+                "icons-midias-sociais-main";  
+        justify-self: center;
+        
+    }
+
+    .icons-midias-sociais-main{
+        align-self: end;
+        grid-area: icons-midias-sociais-main;
+        
+    }
+    .icons-midias-sociais-main > a{
+        margin:  0px 15px 0px 15px;
     }
 
 
-    
-    
-    
+    .texto-apresentacao{
+        grid-area: texto-apresentacao;
+        position: fixed;
+        width: 53vw;
+        margin-top: 120px;
+        margin-left: calc(12vw + 400px);
+    }
+
+    .texto-apresentacao{
+        color: white;
+        font-weight: 550;
+        font-size: 25px;
+        text-shadow: 0px 0px 4px rgb(0, 0, 0);
+        
+    }
+
+    .texto-apresentacao > p{
+        font-family: monospace;
+        content: "|";
+    }
+
+
+
+    footer{
+        grid-area: footer;
+        height: 90px;
+        background-color:rgb(4, 0, 65);
+        padding: 30px;
+    }
+    footer p{
+
+        font-size: 14px;
+        display: inline;
+        color: white;
+    }
 }
