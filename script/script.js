@@ -20,39 +20,38 @@ function escrevendoTexto(e, velocidade){
 }
 
 const textoApresentacao = document.querySelectorAll(".animacao-texto-digitando")
-escrevendoTexto(textoApresentacao, 50)
+escrevendoTexto(textoApresentacao, 30)
 
 //--------------------------------------------
 //animacao icons tecnologia
 
-function animandoIcons(e){
+function animacaoIconsTecnologia(e){
+    // console.log(e)
     for(let i = 0; i < e.length; i++){
 
-        e[i].style.marginBottom = "-150px"
-        console.log(e[i])
+        // e[i].style.marginBottom = "-150px"
+        var teste
         let aux = 0;
-        for(let z = -80; z < 60; z++){
+        for(let z = 30; z > 0; z--){
             aux++
             setTimeout(function(){
-                e[i].style.marginBottom = z +"px"
-            },10*aux)
+                e[i].style.marginTop = z +"%"
+                // console.log(e[i])
+                // console.log(e[i].style.marginTop + "aqui" )
+                // console.log(e[i])
+            }, 50 * aux)
+            teste = z
+            
         }
+
     }
 }
 
-function iconsTecnologiaDesce(e){
-    e.style.marginBottom = "60px"
-}
-
-function iconsTecnologiaSobe(e){
-    e.style.marginBottom = "64px"
-}
 
 
+const animacaoIcons = document.querySelectorAll(".icons-tecnologias")
 
-const animacaoIcons = document.querySelectorAll(".img-icons-tecnologias img")
-
-animandoIcons(animacaoIcons)
+animacaoIconsTecnologia(animacaoIcons)
 
 //Menu dropdown com clique
 function menuDrop() {

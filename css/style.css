@@ -6,8 +6,9 @@
 }
 
 ul{list-style: none;}
-a{text-decoration: none;}
+a{text-decoration: none; cursor: default;}
 img{max-width: 100%;}
+
 
 
 @media screen and (max-width: 480px) {
@@ -23,7 +24,9 @@ img{max-width: 100%;}
 @media screen and (max-width: 1920px) {
     .container{
         display: grid;
+        height: 100vh;
         grid-template-columns: 100%;
+        grid-template-rows: 10% 80% 10%;
         grid-template-areas: 
                 "header"
                 "main"
@@ -36,70 +39,85 @@ img{max-width: 100%;}
         grid-area: header;
         display: grid;  
         grid-template-columns: 30% 70%;
+        grid-template-rows: 100%;
         grid-template-areas:
-                "logo navegacao"
+                "logo navegacao navegacao-logo-header"
         ;
-        height: 100px;
         background-color: rgb(4, 0, 65);
     }
 
     .logo{
         grid-area: logo;
         display: grid;
-        grid-template-columns: 100%;
+        grid-template-columns: 70%;
+        grid-template-rows: 100%;
         grid-template-areas: 
                 "navegacao-logo-header"
         ;
         cursor: default;
+        /* align-self: center; */
     }
+
+
+
     /*Criando a logo */
     .navegacao-logo-header{
         grid-area: navegacao-logo-header;
         display: grid;
-        grid-template-columns: 300px;
+        grid-template-rows: 63%;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+                "link-logo-main"
+        ;
+        align-content: center;
+    }
+
+    .link-logo-main{
+        grid-area: link-logo-main;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 45% 10% 45%;
         grid-template-areas: 
                 "nome-logo-header"
                 "divisao-logo-header"
                 "formacao-logo-header"
         ;
-        justify-content: start;
-        padding-left: 10px;
+        
         color: white;
     }
 
-    .navegacao-logo-header > a{
-        color: white;
+    .link-logo-main:hover{
+        cursor: pointer;
     }
-
     
     .nome-logo-header{
+        width: 90%;
         grid-area: nome-logo-header;
-        font-size: 22pt;
+        font-size: calc(1.2vh + 1.2vw);
         font-weight: 600;
-        width: 300px;
         display: grid;
-        margin-top: 15px;
         align-self: end;
     }
 
     .divisao-logo-header{
         grid-area: divisao-logo-header;
-        height: 5px;
-        width: 300px;
+        height: 100%;
+        width: 100%;
         background-color: turquoise;
         
     }
 
     .formacao-logo-header{
         grid-area: formacao-logo-header;
-        font-size: 19pt;
-        font-weight: 400;
-        width: 251px;
         display: grid;
-        margin-left: 17%;
-        margin-bottom: 15px;
+        justify-self: end;
+        font-size: calc(1.0vh + 1.0vw);
+        font-weight: 400;
+        display: grid;
     }
     /*FIM DO LOGO*/
+
+
 
 
     /*Estilo para NAV-BAR*/
@@ -107,6 +125,7 @@ img{max-width: 100%;}
         grid-area: navegacao;
         display: grid;
         grid-template-columns: 100%;
+        grid-template-rows: 100%;
         grid-template-areas: 
                 "navbar-header"
         ;
@@ -117,17 +136,28 @@ img{max-width: 100%;}
     .navbar-header{
         grid-area: navbar-header;
         display: grid;
+        grid-template-columns: 70%;
+        grid-template-rows: 100%;
         justify-content: end;
-        align-items: center;
+        margin-right: 5%;
     }
-
-    .navbar-header li{
-        display: inline-block;
-        margin-right: 25px;
-        padding: 25px;
-        font-size: 20px;
-        font-family: monospace;
+    
+    .navbar-header ul{
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 50%;
+        font-size: calc(0.8vh + 0.8vw);
         font-weight: 550;
+        align-content: center;
+    }
+    
+    .navbar-header li{
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        cursor: pointer;
+        font-family: monospace;
+        width: 80%;
     }
 
     .navbar-header li:hover{
@@ -135,89 +165,121 @@ img{max-width: 100%;}
         background-color: rgb(9, 0, 87);
         box-shadow: 0px 0px 10px 1px rgb(1, 224, 240);
     }
-
     /*FIM MENU DE NAVEGACAO*/
+
+
+
 
     /*Estilo do conteudo da pagina principal*/
 
     main{
         grid-area: main;
-        height: calc(100vh - 190px);
+        height: 100%;
         display: grid;
-        grid-template-columns: 20% 80%;
+        grid-template-columns: 35% 65%;
         grid-template-areas: 
                 "bg1 bg2"
         ;
-        overflow: hidden;
+        /* overflow: hidden; */
     }
 
     .bg1-main{
         grid-area: bg1;
+        display: grid;
+        grid-template-columns: 30%;
+        justify-content: end;
         background-color: rgb(104, 237, 255);
     }
 
     .bg2-main{
         background-color: rgb(3, 5, 102);
-        grid-area: bg2;
         
+    }
+
+    .bg1-bg2-main{
+        background-color: rgb(3, 5, 102);
     }
 
     /*Estilo aplicado ao card principal da pagina home*/
 
     .container-flutuante-main{
+        /* grid-area: container-flutuante-main; */
         position: absolute;
-        width: 100vw;
-        height: calc(100vh - 190px);
+        width: 100%;
+        height: 80%;
         display: grid;
-        grid-template-columns: 20% 80%;
+        grid-template-columns: 35% 65%;
+        grid-template-rows: 80% 20%;
         grid-template-areas: 
                 "card-flutuante-main texto-apresentacao"
                 "card-flutuante-main card-tecnologias-main"
         ;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 
     .card-tecnologias-main{
         grid-area: card-tecnologias-main;
         display: grid;
-        align-self: end;
-        justify-self: end;
-
+        grid-template-columns: 60%;
+        grid-template-rows: 100%;
+        grid-template-areas: 
+                "icons-tecnologias"
+        ;
+        margin-left: 10%;
     }
-
+    
     .icons-tecnologias{
-        display: inline;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-template-rows: 100%;
         overflow: hidden;
-        margin-right: 70px;
-        
     }
-
-    .icons-tecnologias a{
+    
+    
+    .icons-tecnologias div{
+        display: grid;
+        /* grid-template-rows: ; */
+        /* grid-template-columns: 100%; */
+        /* align-content: top; */
         cursor: default;
     }
-
-    .icons-tecnologias img{
-        cursor: pointer;
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
-    .img-icons-tecnologias img:hover{
-        margin-bottom: 70px;
+    
+    
+    .icons-tecnologias div:nth-child(n) {
+        margin-top: 10%;
+        height: 38%;
+        width: 47%
         
     }
     
-
+    .icons-tecnologias div:nth-child(n):hover {
+        margin-top: 7%;
+        
+    }
+    .img-icons-tecnologias{
+        /* margin-right: ; */
+        /* padding: 10%; */
+        max-height: 100%;
+        max-width: 100%;
+    }
+    .img-icons-tecnologias:hover{
+        cursor: pointer;
+    }
+    
+    
     .card-flutuante-main{
         /* position: absolute; */
-        height: 500px;
-        width: 350px;
-        margin-left: 12vw;
-        margin-top: 50px;
+        height:calc(20vh +  20vw);
+        width:calc(13vh + 13vw);
+        margin-top: 15%;
         background-color: white;
         box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.63);
         display: grid;
         align-content: start;
+        justify-self: end;
         grid-template-columns: 100%;
+        grid-template-rows: 60% 15% 25%;
         grid-template-areas: 
                 "foto-card-main"
                 "logo-card-main"
@@ -225,11 +287,39 @@ img{max-width: 100%;}
         ;
     }
 
-    .foto-card-main{
-        grid-area: foto-card-main;
-        height: 320px;
+    .midias-sociais-card-main{
+        grid-area: midias-sociais-card-main;
         display: grid;
         grid-template-columns: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas: 
+            "icons-midias-sociais-main";              
+    }
+            
+    .icons-midias-sociais-main{
+        grid-area: icons-midias-sociais-main;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        align-self: end;
+        margin-bottom: 2%;
+        
+    }
+    .icons-midias-sociais-main > a{
+        justify-self: center;
+    }
+
+    .img-midias-sociais{
+        
+        max-height: calc(1.7vh + 1.7vw);
+        max-width: calc(1.7vh + 1.7vw);
+    }
+
+    .foto-card-main{
+        grid-area: foto-card-main;
+        /* height: calc(60% + 60%); */
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
         grid-template-areas:
                 "img-card-main";
         align-items: center;
@@ -238,8 +328,9 @@ img{max-width: 100%;}
     .img-card-main{
         grid-area: img-card-main;
         justify-self: center;
-        height: 300px;
-        width: 250px;
+        align-self: start;
+        margin-top: 5%;
+        width: calc(35% + 35%);
     }
 
     .img-card-main img{
@@ -248,10 +339,11 @@ img{max-width: 100%;}
 
     .logo-card-main{
         grid-area: logo-card-main;
-        height: 90px;
+        /* height: 90px; */
         background-color: rgb(255, 255, 255);
         display: grid;
         grid-template-columns: 100%;
+        grid-auto-rows: 46% 4% 50%;
         grid-template-areas: 
                 "nome-logo-card-main"
                 "linha-logo-card-main"
@@ -262,68 +354,50 @@ img{max-width: 100%;}
 
     .nome-logo-card-main{
         grid-area: nome-logo-card-main;
-        font-size: 24pt;
+        font-size: calc(1.2vh + 1.2vw);
         font-weight: 600;
-        height: 25px;
-        width: 300px;
         display: grid;
-        align-self: start;
-        margin-left: 10px;
-        margin-top: 0px;
+        align-self: end;
+        margin-left: 3%;
+        /* margin-top: 0px; */
     }
 
     .linha-logo-card-main{
         grid-area: linha-logo-card-main;
         justify-self: center;
         align-self: start;
-        height: 5px;
-        width: 340px;
+        height: 100%;
+        width: 94%;
         background-color: turquoise;
     }
 
     .formacao-logo-card-main{
-        font-size: 20pt;
+        font-size: calc(1.1vh + 1.1vw);;
         font-weight: 400;
-        margin-right: 5px;
+        margin-right: 3%;
         display: grid;
         justify-self: end;
-        margin-top: -10px;
+        align-self: start;
     }
-    .midias-sociais-card-main{
-        grid-area: midias-sociais-card-main;
-        display: grid;
-        height: 85px;
-        grid-template-columns: 100%;
-        grid-template-areas: 
-                "icons-midias-sociais-main";  
-        justify-self: center;
-        
-    }
+    
+    /* .texto-apresentacao div{
 
-    .icons-midias-sociais-main{
-        align-self: end;
-        grid-area: icons-midias-sociais-main;
-        
-    }
-    .icons-midias-sociais-main > a{
-        margin:  0px 15px 0px 15px;
-    }
-
+    } */
 
     .texto-apresentacao{
         grid-area: texto-apresentacao;
-        position: fixed;
-        width: 53vw;
-        margin-top: 120px;
-        margin-left: calc(12vw + 400px);
-    }
-
-    .texto-apresentacao{
+        display: grid;
+        grid-template-columns: calc(60vw);
         color: white;
         font-weight: 550;
-        font-size: 25px;
+        font-size: calc(1.2vh + 1.2vw);
         text-shadow: 0px 0px 4px rgb(0, 0, 0);
-        
+    }
+
+
+    .texto-apresentacao div{
+        margin-left: 5%;
+        margin-top: 12%;
     }
 
     .texto-apresentacao > p{
@@ -335,14 +409,31 @@ img{max-width: 100%;}
 
     footer{
         grid-area: footer;
-        height: 90px;
+        display: grid;
+        grid-template-rows: 30%;
+        grid-template-columns: 28%;
+        align-content: center;
+        justify-content: start;
         background-color:rgb(4, 0, 65);
-        padding: 30px;
     }
+
+    .texto-footer{
+        display: grid;
+        margin-left: 5%;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+    }
+    
+    .texto-footer:nth-child(1){
+        display: grid;
+        align-self: end;
+        font-size: calc(0.7vh + 0.7vw);
+        
+    }    
+
     footer p{
 
-        font-size: 14px;
-        display: inline;
+        
         color: white;
     }
 }
